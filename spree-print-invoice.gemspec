@@ -5,6 +5,7 @@ Gem::Specification.new do |s|
   s.name        = 'spree_print_invoice'
   s.version     = version
   s.summary     = 'Print invoices from a spree order'
+  s.authors     = ['sbounmy', 'mrr728']
   s.required_ruby_version = '>= 1.8.7'
 
   s.files        = Dir['README.markdown', 'lib/**/*', 'app/**/*', 'config/*']
