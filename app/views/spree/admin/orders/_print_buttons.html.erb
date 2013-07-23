@@ -1,9 +1,10 @@
-<div class="order-links toolbar">
-<% if @order.completed_at? %>
-  <% buttons = PrintInvoice::Config[:buttons] || "invoice"
-     buttons = buttons.split(",").collect{|b| b.strip } %>
-  <%  buttons.each do |button| %>
-    <%= button_link_to(t(button.to_s+"_print"), admin_print_order_path(@order, :html, :template => button)) %>
+<% content_for :page_actions do %>
+  <% if @order.completed_at? %>
+    <% buttons = PrintInvoice::Config[:buttons] || "invoice"
+       buttons = buttons.split(",").collect{|b| b.strip } %>
+    <%  buttons.each do |button| %>
+      <li><%= button_link_to(t(button.to_s+"_print"), admin_print_order_path(@order, :html, :template => button)) %></li>
+    <% end %>
   <% end %>
+
 <% end %>
-</div>
